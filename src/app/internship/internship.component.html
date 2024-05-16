@@ -1,0 +1,46 @@
+<div *ngIf="show_ip">
+  <mat-card>
+    <h2 class="mat-display-1">Internship Updates</h2>
+  </mat-card>
+
+  <br>
+  <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle (click)="onAddEntry()">Create New Entry</mat-button-toggle>
+    <mat-button-toggle (click)="onShowEntry()">Show Existing Entries</mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <br>
+  <br>
+  <div *ngIf="create_entry">
+    <mat-form-field>
+      <input matInput [matDatepicker]="datepicker" [(ngModel)]="selectedDate" (dateChange)="onUpdateDate($event)">
+      <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+      <mat-datepicker #datepicker></mat-datepicker>
+    </mat-form-field>
+
+    <br>
+    <mat-form-field>
+      <mat-label>Day</mat-label>
+      <input matInput (input)="onUpdateDay($event)">
+    </mat-form-field>
+
+    <br>
+    <mat-form-field>
+      <mat-label>Today's Tasks</mat-label>
+      <textarea matInput (input)="onUpdateTask($event)"></textarea>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button [disabled]="!add_button_status" (click)="new_entry()">+</button>
+  </div>
+  <div *ngIf="show_entry">
+    <div *ngFor="let item of updates">
+      <mat-list>
+        <mat-list-item>
+          <span matListItemTitle>{{ item.date }}</span>
+          <span matListItemLine>{{item.day}}</span>
+          <span matListItemLine>{{ item.task }}</span>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>
