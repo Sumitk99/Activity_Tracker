@@ -30,17 +30,22 @@
       <textarea matInput (input)="onUpdateTask($event)"></textarea>
     </mat-form-field>
     <br>
-    <button mat-raised-button [disabled]="!add_button_status" (click)="new_entry()">+</button>
+    <button mat-raised-button [disabled]="!add_button_status" (click)="new_entry('New Entry Added', 'Close')">+</button>
   </div>
   <div *ngIf="show_entry">
-    <div *ngFor="let item of updates">
-      <mat-list>
-        <mat-list-item>
-          <span matListItemTitle>{{ item.date }}</span>
-          <span matListItemLine>{{item.day}}</span>
-          <span matListItemLine>{{ item.task }}</span>
-        </mat-list-item>
-      </mat-list>
-    </div>
+    <button mat-stroked-button (click)="openDialog(0)">Day 1</button>
+    <button mat-stroked-button (click)="openDialog(1)">Day 2</button>
+    <button mat-stroked-button (click)="openDialog(2)">Day 3</button>
+    <button mat-stroked-button (click)="openDialog(3)">Day 4</button>
+    <button mat-stroked-button (click)="openDialog(4)">Day 5</button>
+<!--    <div *ngFor="let item of updates">-->
+<!--      <mat-list>-->
+<!--        <mat-list-item>-->
+<!--          <span matListItemTitle>{{ item.date }}</span>-->
+<!--          <span matListItemLine>{{item.day}}</span>-->
+<!--          <span matListItemLine>{{ item.task }}</span>-->
+<!--        </mat-list-item>-->
+<!--&lt;!&ndash;      </mat-list>&ndash;&gt;-->
+<!--    </div>-->
   </div>
 </div>

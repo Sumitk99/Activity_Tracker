@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatCardModule } from '@angular/material/card';  // Import MatCardModule
-
+import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,12 +16,16 @@ import { MatListModule } from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
 import { LanguageComponent } from './language/language.component';
 import { FrameworksComponent } from './frameworks/frameworks.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { MatDialog, MatDialogModule} from "@angular/material/dialog";
+
 @NgModule({
   declarations: [
     AppComponent,
     InternshipComponent,
     LanguageComponent,
-    FrameworksComponent
+    FrameworksComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,9 @@ import { FrameworksComponent } from './frameworks/frameworks.component';
     MatButtonToggleModule,
     MatListModule,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
