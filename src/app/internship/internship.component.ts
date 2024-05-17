@@ -80,16 +80,25 @@ export class InternshipComponent implements OnInit {
     this.create_entry = !this.create_entry
   }
 
-  openDialog(n:number) {
-    this.dialogNo = n
-    console.log(this.dialogNo,' ', this.noOfEntries-1)
+  openDialog(event:Event){
+    const button = event.target as HTMLButtonElement;
+    const buttonText = button.innerText || button.textContent;
 
-    if(this.dialogNo-1 > this.noOfEntries-2){
-      this.dataSend = new intern_update('','','No Entries for the day so far')
-      this.snackbar.open('No Entry added  for the day', 'close', {duration:3000});
+    console.log(buttonText);
+    let n = 0
+    // @ts-ignore
+    for(let i = buttonText.length - 1, j = 0; i >= 0 && buttonText[i] != ' '; i--, j++){
+      // @ts-ignore
+      let x = buttonText.charAt(i) - '0';
+      n = n + (Math.pow(10, j)*x)
+    }
+    console.log(n-1, buttonText)
+    // @ts-ignore
+    if(buttonText.length == 0){
+      this.dataSend = new intern_update('Cannot fetch data','','')
     }
     else{
-      this.dataSend = this.updates[n]
+      this.dataSend = this.updates[n-1]
     }
     this.shared.setMessage(this.dataSend)
     this.dialog.open(DialogComponent);
