@@ -19,12 +19,10 @@ export class InternshipComponent implements OnInit {
   formattedDate: string = "";
   tasks_input:string = "";
   add_button_status = false
-  dialogNo:number = 0
   show_entry  = false
   updates:intern_update[]= [new intern_update("1/1/2001", "Day 1", "Complete Internship Profile")]
   dataSend:intern_update = new intern_update('','','')
 
-  noOfEntries = 1
   @Output() event = new EventEmitter<intern_update>()
   constructor(private snackbar: MatSnackBar, public dialog: MatDialog, private shared:SharedService) {
     setTimeout(() => {
@@ -36,7 +34,6 @@ export class InternshipComponent implements OnInit {
 
   new_entry(messege:string, action:string){
     this.snackbar.open(messege, action, {duration:2000});
-    this.noOfEntries++
     this.updates.push(new intern_update(this.formattedDate, this.day_input,this.tasks_input))
   }
   public onUpdateDay(event: Event){
@@ -80,36 +77,14 @@ export class InternshipComponent implements OnInit {
     this.create_entry = !this.create_entry
   }
 
-  openDialog(event:Event){
-    const button = event.target as HTMLButtonElement;
-    const buttonText = button.innerText || button.textContent;
-
-    console.log(buttonText);
-    let n = 0
-    // @ts-ignore
-    for(let i = buttonText.length - 1, j = 0; i >= 0 && buttonText[i] != ' '; i--, j++){
-      // @ts-ignore
-      let x = buttonText.charAt(i) - '0';
-      n = n + (Math.pow(10, j)*x)
-    }
-    console.log(n-1, buttonText)
-    // @ts-ignore
-    if(buttonText.length == 0){
-      this.dataSend = new intern_update('Cannot fetch data','','')
-    }
-    else{
-      this.dataSend = this.updates[n-1]
-    }
+  openDialog(n:number){
+    console.log(n, this.updates[n])
+    this.dataSend = this.updates[n]
     this.shared.setMessage(this.dataSend)
     this.dialog.open(DialogComponent);
   }
 
-
-
-
   ngOnInit(): void {
   }
-
-
 }
 
