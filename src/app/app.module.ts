@@ -18,6 +18,8 @@ import { LanguageComponent } from './language/language.component';
 import { FrameworksComponent } from './frameworks/frameworks.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatDialog, MatDialogModule} from "@angular/material/dialog";
+import { HeaderComponent } from './header/header.component';
+import { DatabaseComponent } from './database/database.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { MatDialog, MatDialogModule} from "@angular/material/dialog";
     InternshipComponent,
     LanguageComponent,
     FrameworksComponent,
-    DialogComponent
+    DialogComponent,
+    HeaderComponent,
+    DatabaseComponent
   ],
   imports: [
     BrowserModule,

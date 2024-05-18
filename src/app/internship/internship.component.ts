@@ -28,7 +28,7 @@ export class InternshipComponent implements OnInit {
     setTimeout(() => {
         this.show_ip = true
       }
-      , 2000
+      , 0
     )
   }
 
@@ -69,10 +69,12 @@ export class InternshipComponent implements OnInit {
   }
 
   onShowEntry(){
+    this.selectedValue  = 'show'
     this.create_entry = false
     this.show_entry = !this.show_entry
   }
   onAddEntry(){
+    this.selectedValue = 'create'
     this.show_entry = false
     this.create_entry = !this.create_entry
   }
@@ -86,5 +88,8 @@ export class InternshipComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  selectedValue: string = 'create';
+
 }
 
