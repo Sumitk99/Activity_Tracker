@@ -83,7 +83,9 @@ export class InternshipComponent implements OnInit {
     console.log(n, this.updates[n])
     this.dataSend = this.updates[n]
     this.shared.setMessage(this.dataSend)
-    this.dialog.open(DialogComponent);
+    this.dialog.open(DialogComponent, {
+
+    });
   }
 
   ngOnInit(): void {

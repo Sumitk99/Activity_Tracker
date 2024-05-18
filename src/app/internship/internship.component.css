@@ -32,6 +32,7 @@
 }
 
 .custom-button {
+
   flex: 1;
   color: white; /* Default text color */
   border: none; /* Remove default border */
@@ -42,6 +43,7 @@
 }
 
 .custom-button.mat-button-toggle-checked {
+
   background-color: #413F42;
   color: white; /* Active button text color */
 }
