@@ -13,10 +13,6 @@ export class DialogComponent {
   }
   message = new intern_update('','','')
 
-  // receiveMessage(rec:intern_update){
-  //   this.message = rec
-  // }
-
   ngOnInit():void{
     this.message = this.shared.getMessage()
   }

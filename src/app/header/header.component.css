@@ -1,0 +1,27 @@
+:host {
+  display: block;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-links img {
+  height: 30px;
+  width: 30px;
+}
+
+.circle{
+  border-radius: 50%;
+  object-fit: cover;
+
+}

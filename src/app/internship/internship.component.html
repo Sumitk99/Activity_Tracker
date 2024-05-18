@@ -1,13 +1,20 @@
 <div *ngIf="show_ip">
+  <div class="background-div">
   <mat-card>
-    <h2 class="mat-display-1">Internship Updates</h2>
+    <p class="mat-display-1" style="font-size: 23px">Internship at</p>
+    <div class="logo">
+      <img src="assets/header/images/logo.png" alt="Company Logo">
+    </div>
   </mat-card>
-
   <br>
-  <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-    <mat-button-toggle (click)="onAddEntry()">Create New Entry</mat-button-toggle>
-    <mat-button-toggle (click)="onShowEntry()">Show Existing Entries</mat-button-toggle>
+
+  <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="button-toggle-group" [(ngModel)]="selectedValue">
+    <mat-button-toggle value="create" class="custom-button" (click)="onAddEntry()">Create New Entry</mat-button-toggle>
+    <mat-button-toggle value="show" class="custom-button" (click)="onShowEntry()">Show Existing Entries</mat-button-toggle>
+    <div class="slider" [ngClass]="{'slide-create': selectedValue === 'create', 'slide-show': selectedValue === 'show'}"></div>
   </mat-button-toggle-group>
+
+
 
   <br>
   <br>
@@ -33,19 +40,15 @@
     <button mat-raised-button [disabled]="!add_button_status" (click)="new_entry('New Entry Added', 'Close')">+</button>
   </div>
   <div *ngIf="show_entry">
-    <button mat-stroked-button (click)="openDialog(0)">Day 1</button>
-    <button mat-stroked-button (click)="openDialog(1)">Day 2</button>
-    <button mat-stroked-button (click)="openDialog(2)">Day 3</button>
-    <button mat-stroked-button (click)="openDialog(3)">Day 4</button>
-    <button mat-stroked-button (click)="openDialog(4)">Day 5</button>
-<!--    <div *ngFor="let item of updates">-->
-<!--      <mat-list>-->
-<!--        <mat-list-item>-->
-<!--          <span matListItemTitle>{{ item.date }}</span>-->
-<!--          <span matListItemLine>{{item.day}}</span>-->
-<!--          <span matListItemLine>{{ item.task }}</span>-->
-<!--        </mat-list-item>-->
-<!--&lt;!&ndash;      </mat-list>&ndash;&gt;-->
-<!--    </div>-->
+    <div class="button-container">
+      <div *ngFor="let item of updates; let i = index" >
+        <mat-card class="dis">
+          <button mat-stroked-button (click)="openDialog(i)" class="day-button">{{ item.day }}</button>
+          <mat-card-content style="padding-top: 10px">{{ item.date }}</mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
   </div>
+</div>
 </div>

@@ -1,0 +1,129 @@
+
+.button-container {
+  display: flex;
+  gap: 10px; /* Adjust the gap value to increase/decrease space between buttons */
+  padding-left: 40px; /* Adjust the padding value to create space from the left edge of the screen */
+  flex-wrap: wrap; /* Optional: allows buttons to wrap to the next line if there's not enough space */
+}
+
+.button-container div {
+  margin-right: 10px; /* Optional: additional spacing if needed */
+}
+
+.comp_gap {
+  display: flex;
+  gap: 10px; /* Adjust the gap value to increase/decrease space between buttons */
+  padding-left: 20px; /* Adjust the padding value to create space from the left edge of the screen */
+  flex-wrap: wrap;
+}
+
+.button-toggle-group {
+  display: flex;
+  gap: 15px; /* Space between the buttons */
+  padding: 10px;
+}
+
+.button-toggle-group {
+  display: flex;
+  position: relative;
+  background-color: black; /* Container background color */
+  border-radius: 25px; /* Rounded corners for the group */
+  padding: 5px;
+}
+
+.custom-button {
+  flex: 1;
+  color: white; /* Default text color */
+  border: none; /* Remove default border */
+  border-radius: 25px; /* Rounded corners for buttons */
+  transition: color 0.5s ease;
+  z-index: 1; /* Ensure buttons are above the slider */
+  background-color: black;
+}
+
+.custom-button.mat-button-toggle-checked {
+  background-color: #413F42;
+  color: white; /* Active button text color */
+}
+
+.custom-button:hover{
+  color: #7F8487;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%; /* Adjust width according to the number of buttons */
+  background-color: black; /* Slider background color */
+  border-radius: 25px; /* Rounded corners for the slider */
+  transition: transform 0.3s ease;
+  z-index: 0; /* Ensure slider is below the buttons */
+}
+
+.slide-create {
+  transform: translateX(0%);
+}
+
+.slide-show {
+  transform: translateX(100%);
+}
+
+.logo img {
+  height: 50px;
+}
+.background-div {
+  /*background-image: url('../../assets/internship/dark.jpg');*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+.day-button {
+  padding-top: 10px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #7F8487;
+}
+
+.dis {
+  width: 130px; /* Set the desired width */
+  height: 80px;
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center; /* Center align content vertically */
+  text-align: center; /* Center align text horizontally */
+  position: relative; /* Add relative positioning for pseudo-element */
+}
+
+.dis img {
+  padding-top: 10px;
+  max-width: 80px; /* Adjust the max-width of the image */
+  transition: transform 0.3s ease; /* Add transition for smooth animation */
+}
+
+/* Pseudo-element for swipe effect */
+.dis::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: width 0.3s ease, border-radius 0.3s ease; /* Include border-radius in the transition */
+  border-radius: 10px; /* Set the desired border radius */
+
+}
+
+/* Hover effect */
+.dis:hover::before {
+  width: 100%; /* Expand the pseudo-element width on hover */
+}
+
+.block{
+  background-color: #7F8487;
+  border-radius: 20px;
+}
