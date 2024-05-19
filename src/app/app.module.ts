@@ -20,6 +20,9 @@ import { DialogComponent } from './dialog/dialog.component';
 import { MatDialog, MatDialogModule} from "@angular/material/dialog";
 import { HeaderComponent } from './header/header.component';
 import { DatabaseComponent } from './database/database.component';
+import {FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {MatStepperModule} from '@angular/material/stepper';
+import { StepperinputComponent } from './internship/stepperinput/stepperinput.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { DatabaseComponent } from './database/database.component';
     FrameworksComponent,
     DialogComponent,
     HeaderComponent,
-    DatabaseComponent
+    DatabaseComponent,
+    StepperinputComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,9 @@ import { DatabaseComponent } from './database/database.component';
     FormsModule,
     MatCardModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -19,37 +19,37 @@
 
 .button-toggle-group {
   display: flex;
-  gap: 15px; /* Space between the buttons */
+  gap: 10px; /* Space between the buttons */
   padding: 10px;
+  max-width: 300px;
 }
 
 .button-toggle-group {
   display: flex;
   position: relative;
-  background-color: black; /* Container background color */
+  background-color: #1D2B53; /* Container background color */
   border-radius: 25px; /* Rounded corners for the group */
   padding: 5px;
 }
 
 .custom-button {
-
   flex: 1;
   color: white; /* Default text color */
   border: none; /* Remove default border */
   border-radius: 25px; /* Rounded corners for buttons */
   transition: color 0.5s ease;
   z-index: 1; /* Ensure buttons are above the slider */
-  background-color: black;
+  background-color: #1D2B53;
 }
 
 .custom-button.mat-button-toggle-checked {
 
-  background-color: #413F42;
+  background-color: #5D0E41;
   color: white; /* Active button text color */
 }
 
 .custom-button:hover{
-  color: #7F8487;
+  background-color: #49243E;
 }
 
 .slider {
@@ -75,7 +75,6 @@
   height: 50px;
 }
 .background-div {
-  /*background-image: url('../../assets/internship/dark.jpg');*/
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -86,13 +85,14 @@
   padding-top: 10px;
   border-radius: 10px;
   text-align: center;
-  background-color: #7F8487;
+  color: white;
 }
 
 .dis {
   width: 130px; /* Set the desired width */
-  height: 80px;
+  height: 100px;
   display: flex;
+  padding: 12px;
   border-radius: 10px;
   flex-direction: column;
   align-items: center; /* Center align content vertically */

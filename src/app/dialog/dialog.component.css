@@ -1,3 +1,4 @@
-/*::ng-deep .mat-dialog-container {*/
-/*  border-radius: 15px; !* Adjust the radius as needed *!*/
-/*}*/
+/* YourComponent.component.css */
+::ng-deep .mat-dialog-container {
+  border-radius: 12px; /* Change the value as needed */
+}

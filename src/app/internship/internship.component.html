@@ -14,8 +14,6 @@
     <div class="slider" [ngClass]="{'slide-create': selectedValue === 'create', 'slide-show': selectedValue === 'show'}"></div>
   </mat-button-toggle-group>
 
-
-
   <br>
   <br>
   <div *ngIf="create_entry">
@@ -42,13 +40,12 @@
   <div *ngIf="show_entry">
     <div class="button-container">
       <div *ngFor="let item of updates; let i = index" >
-        <mat-card class="dis">
-          <button mat-stroked-button (click)="openDialog(i)" class="day-button">{{ item.day }}</button>
+        <mat-card class="dis" >
+          <button mat-flat-button (click)="openDialog(i)" class="day-button">{{ item.day }}</button>
           <mat-card-content style="padding-top: 10px">{{ item.date }}</mat-card-content>
         </mat-card>
       </div>
     </div>
-
   </div>
 </div>
 </div>

@@ -24,7 +24,7 @@ export class InternshipComponent implements OnInit {
   dataSend:intern_update = new intern_update('','','')
 
   @Output() event = new EventEmitter<intern_update>()
-  constructor(private snackbar: MatSnackBar, public dialog: MatDialog, private shared:SharedService) {
+  constructor(private snackbar: MatSnackBar, public dialog: MatDialog, private shared:SharedService,) {
     setTimeout(() => {
         this.show_ip = true
       }
@@ -84,7 +84,6 @@ export class InternshipComponent implements OnInit {
     this.dataSend = this.updates[n]
     this.shared.setMessage(this.dataSend)
     this.dialog.open(DialogComponent, {
-
     });
   }
 
