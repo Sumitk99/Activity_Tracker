@@ -22,7 +22,10 @@ import { HeaderComponent } from './header/header.component';
 import { DatabaseComponent } from './database/database.component';
 import {FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {MatStepperModule} from '@angular/material/stepper';
+import { JsonPipe } from '@angular/common';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { StepperinputComponent } from './internship/stepperinput/stepperinput.component';
+import {ProgressSpinnerMode, MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,10 @@ import { StepperinputComponent } from './internship/stepperinput/stepperinput.co
     MatSnackBarModule,
     MatDialogModule,
     ReactiveFormsModule,
-    MatStepperModule
+    MatStepperModule,
+    MatCheckboxModule,
+    JsonPipe,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

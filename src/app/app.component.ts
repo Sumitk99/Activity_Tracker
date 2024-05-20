@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {intern_update} from "./internship/internship.model";
 
 @Component({
   selector: 'app-root',

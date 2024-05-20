@@ -1,12 +1,21 @@
-<div>
-<h2 mat-dialog-title>{{ message.day }}</h2>
-<mat-list>
-  <mat-list-item>
-    <span matListItemTitle>{{ message.date }}</span>
-    <span matListItemLine>{{ message.task }}</span>
-  </mat-list-item>
-</mat-list>
-<mat-dialog-actions align="end" class="cb">
-<button mat-button [mat-dialog-close]="true">Close</button>
-</mat-dialog-actions>
+<div style="padding:20px">
+<div style="display: flex">
+  <h2 mat-dialog-title>{{ message.day }}</h2>
+  <h2 mat-dialog-title>{{ message.date }}</h2>
+</div>
+  <div class="content">
+  <mat-list>
+    <mat-card-title style="padding-left:20px">Tasks</mat-card-title>
+    <mat-list-item *ngFor="let item of message.task; let i = index;">
+      <p><mat-checkbox [checked]="message.checkData[i]" (change)="onChange(i)">{{ item }}</mat-checkbox></p>
+    </mat-list-item>
+  </mat-list>
+  <mat-progress-spinner
+    [color]="'primary'"
+    [value]="spin_value">
+  </mat-progress-spinner>
+  </div>
+  <mat-dialog-actions align="end" class="cb">
+    <button mat-button [mat-dialog-close]="true" class="button">Close</button>
+  </mat-dialog-actions>
 </div>

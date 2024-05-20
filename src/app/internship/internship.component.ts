@@ -4,6 +4,7 @@ import { MatSnackBar} from "@angular/material/snack-bar";
 import { MatDialog, MatDialogModule } from "@angular/material/dialog";
 import {DialogComponent} from "../dialog/dialog.component";
 import { SharedService} from "../shared/shared.service";
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-internship',
@@ -20,11 +21,9 @@ export class InternshipComponent implements OnInit {
   tasks_input:string = "";
   add_button_status = false
   show_entry  = false
-  updates:intern_update[]= [new intern_update("1/1/2001", "Day 1", "Complete Internship Profile")]
-  dataSend:intern_update = new intern_update('','','')
+  updates:intern_update[]= [new intern_update("2001-01-01", "Day 1", ["Complete Internship Profile", "Write API with sql", "Write API with MongoDB"],[true, true, false],2)]
 
-  @Output() event = new EventEmitter<intern_update>()
-  constructor(private snackbar: MatSnackBar, public dialog: MatDialog, private shared:SharedService,) {
+  constructor(private snackbar: MatSnackBar, public dialog: MatDialog, private shared:SharedService, private _formBuilder: FormBuilder) {
     setTimeout(() => {
         this.show_ip = true
       }
@@ -34,7 +33,7 @@ export class InternshipComponent implements OnInit {
 
   new_entry(messege:string, action:string){
     this.snackbar.open(messege, action, {duration:2000});
-    this.updates.push(new intern_update(this.formattedDate, this.day_input,this.tasks_input))
+    this.updates.push(new intern_update(this.formattedDate, this.day_input,[this.tasks_input], [],0))
   }
   public onUpdateDay(event: Event){
     this.day_input = (<HTMLInputElement>event.target).value;
@@ -81,8 +80,7 @@ export class InternshipComponent implements OnInit {
 
   openDialog(n:number){
     console.log(n, this.updates[n])
-    this.dataSend = this.updates[n]
-    this.shared.setMessage(this.dataSend)
+    this.shared.setMessage(this.updates[n])
     this.dialog.open(DialogComponent, {
     });
   }
