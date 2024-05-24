@@ -7,18 +7,16 @@
     </div>
   </mat-card>
   <br>
-
   <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="button-toggle-group" [(ngModel)]="selectedValue">
     <mat-button-toggle value="create" class="custom-button" (click)="onAddEntry()">Create New Entry</mat-button-toggle>
     <mat-button-toggle value="show" class="custom-button" (click)="onShowEntry()">Show Existing Entries</mat-button-toggle>
     <div class="slider" [ngClass]="{'slide-create': selectedValue === 'create', 'slide-show': selectedValue === 'show'}"></div>
   </mat-button-toggle-group>
 
-
-
   <br>
   <br>
   <div *ngIf="create_entry">
+    <app-stepperinput></app-stepperinput>
     <mat-form-field>
       <input matInput [matDatepicker]="datepicker" [(ngModel)]="selectedDate" (dateChange)="onUpdateDate($event)">
       <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
@@ -42,13 +40,12 @@
   <div *ngIf="show_entry">
     <div class="button-container">
       <div *ngFor="let item of updates; let i = index" >
-        <mat-card class="dis">
-          <button mat-stroked-button (click)="openDialog(i)" class="day-button">{{ item.day }}</button>
+        <mat-card class="dis" >
+          <button mat-flat-button (click)="openDialog(i)" class="day-button">{{ item.day }}</button>
           <mat-card-content style="padding-top: 10px">{{ item.date }}</mat-card-content>
         </mat-card>
       </div>
     </div>
-
   </div>
 </div>
 </div>

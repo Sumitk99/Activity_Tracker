@@ -1,0 +1,47 @@
+<!--<mat-vertical-stepper [linear]="false" #stepper [animationDuration]="'500ms'">-->
+<!--  <mat-step [stepControl]="firstFormGroup">-->
+<!--    <form [formGroup]="firstFormGroup">-->
+<!--      <ng-template matStepLabel>Select Date</ng-template>-->
+<!--      <mat-form-field>-->
+<!--        <input matInput [matDatepicker]="datepicker" [(ngModel)]="selectedDate" (dateChange)="onUpdateDate($event)">-->
+<!--        <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>-->
+<!--        <mat-datepicker #datepicker></mat-datepicker>-->
+<!--      </mat-form-field>-->
+<!--      <div>-->
+<!--        <button mat-button matStepperNext>Next</button>-->
+<!--      </div>-->
+<!--    </form>-->
+<!--  </mat-step>-->
+<!--  <mat-step [stepControl]="secondFormGroup">-->
+<!--    <form [formGroup]="secondFormGroup">-->
+<!--      <ng-template matStepLabel>Day</ng-template>-->
+<!--      <mat-form-field>-->
+<!--        <input matInput placeholder="Day" formControlName="secondCtrl" required (click)="onUpdateDay($event)">-->
+<!--      </mat-form-field>-->
+<!--      <div>-->
+<!--        <button mat-button matStepperPrevious>Back</button>-->
+<!--        <button mat-button matStepperNext>Next</button>-->
+<!--      </div>-->
+<!--    </form>-->
+<!--  </mat-step>-->
+<!--  <mat-step [stepControl]="thirdFormGroup">-->
+<!--    <form [formGroup]="thirdFormGroup">-->
+<!--      <ng-template matStepLabel>Tasks</ng-template>-->
+<!--      <mat-form-field>-->
+<!--        <textarea matInput placeholder="Tasks" formControlName="thirdCtrl" required (input)="onUpdateTask($event)"></textarea>-->
+<!--      </mat-form-field>-->
+<!--      <div>-->
+<!--        <button mat-button matStepperPrevious>Back</button>-->
+<!--        <button mat-button matStepperNext (click)="new_entry('New Entry Added', 'Close')">Next</button>-->
+<!--      </div>-->
+<!--    </form>-->
+<!--  </mat-step>-->
+<!--  <mat-step>-->
+<!--    <ng-template matStepLabel>Done</ng-template>-->
+<!--    Your new entry added-->
+<!--    <div>-->
+<!--      <button mat-button matStepperPrevious>Back</button>-->
+<!--      <button mat-button (click)="stepper.reset()">Reset</button>-->
+<!--    </div>-->
+<!--  </mat-step>-->
+<!--</mat-vertical-stepper>-->

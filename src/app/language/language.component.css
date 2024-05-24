@@ -1,9 +1,11 @@
 .button-container {
   display: flex;
   padding-top: 10px;
-  gap: 150px; /* Adjust the gap value to increase/decrease space between cards */
+  gap: 130px; /* Adjust the gap value to increase/decrease space between cards */
   padding-left: 40px; /* Adjust the padding value to create space from the left edge of the screen */
-  flex-wrap: wrap; /* Optional: allows cards to wrap to the next line if there's not enough space */
+  flex-wrap: wrap;
+  padding-right: 40px;
+  padding-bottom: 30px/* Optional: allows cards to wrap to the next line if there's not enough space */
 }
 
 
@@ -15,7 +17,8 @@
   flex-direction: column;
   align-items: center; /* Center align content vertically */
   text-align: center; /* Center align text horizontally */
-  position: relative; /* Add relative positioning for pseudo-element */
+  position: relative;
+  /* Add relative positioning for pseudo-element */
 }
 
 .dis img {
