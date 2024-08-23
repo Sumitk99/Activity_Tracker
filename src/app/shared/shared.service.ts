@@ -5,7 +5,7 @@ import {intern_update} from "../internship/internship.model";
   providedIn: 'root'
 })
 export class SharedService {
-  message:intern_update = new intern_update('','','')
+  message:intern_update = new intern_update('','',[''],[],0)
   constructor() { }
   setMessage(m:intern_update){
     this.message = m
